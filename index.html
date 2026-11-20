@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prajakta Jeurker</title>
+<meta name="description" content="Prajakta Jeurker, financial analyst in Berlin. FP&A, investment research and financial modelling, with AI tools that make finance work faster.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one 1120px column; hero splits into thesis (left) and a profile summary card (right); sections alternate plain and tinted bands. */
+/* Dark feminine: dark-first. Near-black ground with a red cast, dark red fills (--green = accent fill, --green-ink = readable red text), champagne gold details, oxblood contact band. */
+:root{
+  --bg:#110708; --surface:#1C0B0D; --tint:#170809; --ink:#F7E9E7; --muted:#C9A6A3; --line:#3E1A1D;
+  --green:#9E1B24; --green-ink:#EC7A7E; --on-green:#FFF1F0; --gold:#DDB673; --gold-soft:#2C1D14;
+  --band:linear-gradient(135deg,#7E0F18 0%,#2B0508 100%); --on-band:#FFEDEB; --band-btn:#FFEDEB; --band-btn-ink:#7E0F18;
+  --shadow:rgba(0,0,0,.6);
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius:14px;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#FBF5F4; --surface:#FFFFFF; --tint:#F6E7E5; --ink:#240C0E; --muted:#6B4949; --line:#EBD4D2;
+  --green:#8B1219; --green-ink:#8B1219; --on-green:#FFF5F4; --gold:#8A6216; --gold-soft:#F7ECD7;
+  --band:linear-gradient(135deg,#8B1219 0%,#3E0609 100%); --on-band:#FFF5F4; --band-btn:#FFF5F4; --band-btn-ink:#7E0F18;
+  --shadow:rgba(100,15,20,.22); color-scheme:light }}
+:root[data-theme="light"]{
+  --bg:#FBF5F4; --surface:#FFFFFF; --tint:#F6E7E5; --ink:#240C0E; --muted:#6B4949; --line:#EBD4D2;
+  --green:#8B1219; --green-ink:#8B1219; --on-green:#FFF5F4; --gold:#8A6216; --gold-soft:#F7ECD7;
+  --band:linear-gradient(135deg,#8B1219 0%,#3E0609 100%); --on-band:#FFF5F4; --band-btn:#FFF5F4; --band-btn-ink:#7E0F18;
+  --shadow:rgba(100,15,20,.22); color-scheme:light }
+
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--green-ink)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green-ink);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-0.01em}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:88px}
+.band.tinted{background:var(--tint)}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.section-head{display:grid;gap:14px;max-width:640px;margin-bottom:44px}
+.section-head h2{font-size:clamp(28px,4vw,40px)}
+.section-head p{color:var(--muted);font-size:17px}
+.mono{font-family:var(--mono)}
+
+/* nav */
+nav.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.mark{display:flex;align-items:center;gap:10px;font:700 15px var(--display);color:var(--ink);text-decoration:none}
+.mark span.m{width:34px;height:34px;border-radius:9px;background:var(--green);color:var(--on-green);display:grid;place-items:center;font-size:13px;letter-spacing:.02em}
+nav.top ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+nav.top ul a{color:var(--muted);text-decoration:none}
+nav.top ul a:hover{color:var(--ink)}
+@media (max-width:720px){ nav.top ul{display:none} }
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-block:40px 80px}
+.hero > *{min-width:0}
+.badge{display:inline-flex;align-items:center;gap:8px;font:500 13px var(--body);color:var(--green-ink);background:var(--surface);border:1px solid var(--line);padding:7px 13px;border-radius:999px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 22%,transparent)}
+.hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:800;margin:22px 0 20px}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--green-ink)}
+.hero .lede{font-size:19px;color:var(--muted);max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--body);padding:13px 20px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--green);color:var(--on-green)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--green-ink)}
+.who{margin-top:30px;font-size:14px;color:var(--muted)}
+
+/* profile card */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px -30px var(--shadow);overflow:hidden}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);font:500 12px var(--mono);color:var(--muted)}
+.card-top b{color:var(--ink);font-weight:500}
+.card-top .open{background:var(--gold-soft);color:var(--gold);padding:3px 8px;border-radius:6px;white-space:nowrap}
+.card dl{margin:0;padding:6px 20px}
+.card dl div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.card dl div:last-child{border-bottom:0}
+.card dt{font:500 11px/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.card dd{margin:0;font-size:15px;min-width:0}
+.card dd span{display:block;font-size:13.5px;color:var(--muted)}
+.card-foot{padding:12px 20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+/* facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:26px 22px;border-right:1px solid var(--line);display:grid;gap:4px}
+.facts div:last-child{border-right:0}
+.facts strong{font:700 22px var(--display);letter-spacing:-.01em}
+.facts span{font-size:14px;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.about > *{min-width:0}
+.about .copy{display:grid;gap:18px;font-size:17.5px;max-width:62ch}
+.about .copy p:first-child{font:600 22px/1.45 var(--display);letter-spacing:-.01em}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:12px;align-content:start}
+.pillar .k{font:500 12px var(--mono);color:var(--gold)}
+.pillar h3{font-size:21px}
+.pillar p{color:var(--muted);font-size:15px}
+.pillar ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:14px}
+.pillar li::before{content:"→ ";color:var(--green-ink)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 13px var(--body);padding:6px 11px;border-radius:8px;background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:14px;align-content:start}
+.proj .tag{font:500 12px var(--mono);color:var(--muted)}
+.proj h3{font-size:19px}
+.proj dl{margin:0;display:grid;gap:10px;font-size:14.5px}
+.proj dt{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.proj dd{margin:2px 0 0;color:var(--muted)}
+.proj a.more{font:600 14px var(--body);text-decoration:none}
+
+/* experience */
+.timeline{display:grid;gap:0}
+.role{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--line)}
+.role > *{min-width:0}
+.role .when{font:500 13px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.role h3{font-size:20px}
+.role .org{color:var(--green-ink);font-weight:500;margin:2px 0 12px}
+.role ul{margin:0 0 14px;padding-left:18px;display:grid;gap:6px;color:var(--muted)}
+.role .chips .chip{font-size:12px;padding:4px 9px;background:var(--tint);border-color:transparent}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.skills h3{font-size:17px;margin-bottom:14px}
+
+/* edu */
+.edu{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.edu > div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:grid;gap:10px;align-content:start}
+.edu h3{font-size:17px}
+.edu .row{display:grid;gap:2px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.edu .row:last-child{border-bottom:0;padding-bottom:0}
+.edu .row b{font-weight:600}
+.edu .row span{font-size:14px;color:var(--muted)}
+.lang{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:6px 0;border-bottom:1px solid var(--line)}
+.lang:last-of-type{border-bottom:0}
+.lang span{color:var(--muted)}
+
+/* contact */
+.contact{background:var(--band);color:var(--on-band);border-radius:22px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contact > *{min-width:0}
+.contact h2{font-size:clamp(28px,4vw,42px)}
+.contact p{opacity:.85;margin-top:14px;font-size:17px}
+.mailbox{background:color-mix(in srgb,var(--on-band) 8%,transparent);border:1px solid color-mix(in srgb,var(--on-band) 25%,transparent);border-radius:14px;padding:20px;display:grid;gap:14px}
+.mailbox .addr{font:500 18px var(--mono);user-select:all;overflow-wrap:anywhere}
+.mailbox .row{display:flex;flex-wrap:wrap;gap:10px}
+.mailbox button,.mailbox a{font:600 14px var(--body);padding:10px 16px;border-radius:9px;border:0;cursor:pointer;text-decoration:none}
+.mailbox button{background:var(--band-btn);color:var(--band-btn-ink)}
+.mailbox a{background:transparent;color:var(--on-band);border:1px solid color-mix(in srgb,var(--on-band) 40%,transparent)}
+.mailbox small{opacity:.8;font-size:13px}
+
+footer{padding-block:36px 48px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:900px){
+  .hero,.about,.contact{grid-template-columns:1fr}
+  .pillars,.projects,.skills{grid-template-columns:1fr}
+  .edu{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .role{grid-template-columns:1fr;gap:8px}
+  .band{padding-block:64px}
+  .contact{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="top" aria-label="Main">
+    <a class="mark" href="#top"><span class="m">PJ</span>Prajakta Jeurker</a>
+    <ul>
+      <li><a href="#ai">AI work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <span class="badge"><i></i>Open to Werkstudent, internship &amp; junior roles · Berlin</span>
+      <h1>Finance analyst who <em>speaks tech.</em></h1>
+      <p class="lede">I analyse financial statements, build forecasting models and write the recommendation. I use AI tools to do the slow parts faster, so there's more time for judgement.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#ai">See how I use AI</a>
+      </div>
+      <p class="who">M.Sc. Finance &amp; Investment, Berlin · NSE-certified · Targeting FP&amp;A, Investment Research, Corporate Finance</p>
+    </div>
+
+    <aside class="card" aria-label="Profile summary">
+      <div class="card-top"><b>Profile · Berlin</b><span class="open">Available now</span></div>
+      <dl>
+        <div><dt>Studying</dt><dd>M.Sc. Finance &amp; Investment<span>Berlin School of Business and Innovation · 2027</span></dd></div>
+        <div><dt>Last role</dt><dd>Financial Analyst<span>Wegsoft Technologies · 2024 – 2025</span></dd></div>
+        <div><dt>Focus</dt><dd>FP&amp;A · Investment research · Corporate finance</dd></div>
+        <div><dt>Works with</dt><dd>Excel models · PowerPoint · AI tools</dd></div>
+        <div><dt>Shipped</dt><dd>Rhythm Singers booking site<span>Live, built with AI-assisted development</span></dd></div>
+      </dl>
+      <div class="card-foot">NSE-certified · English, Hindi, German</div>
+    </aside>
+  </header>
+</div>
+
+<div class="wrap">
+  <section class="facts" aria-label="At a glance">
+    <div><strong>4 roles</strong><span>Finance, aviation ops, projects, recruiting</span></div>
+    <div><strong>M.Sc. 2027</strong><span>Finance &amp; Investment, Berlin</span></div>
+    <div><strong>1 live product</strong><span>Built and shipped with AI</span></div>
+    <div><strong>3 languages</strong><span>English, Hindi, German</span></div>
+  </section>
+</div>
+
+<section class="band" id="about">
+  <div class="wrap about">
+    <div class="section-head" style="margin:0">
+      <span class="eyebrow">About</span>
+      <h2>Numbers first. Then the tools that make them faster.</h2>
+    </div>
+    <div class="copy">
+      <p>I'm a financial analyst from Pune, now in Berlin for my M.Sc. in Finance &amp; Investment.</p>
+      <p>At Wegsoft Technologies I analysed income statements, balance sheets and cash flows, built Excel models and revenue forecasts for budgeting, and turned the results into recommendations management could act on.</p>
+      <p>Before that I worked in aviation operations at Air India, coordinated projects end to end and recruited for client teams. That taught me to hit deadlines and keep many people informed.</p>
+      <p>I'm not an engineer. I use AI the way a good analyst uses Excel: to do the slow parts quickly and leave more time for judgement. I've even shipped a live booking website with it.</p>
+      <p>I'm looking for a Werkstudent or junior role in FP&amp;A, investment research or corporate finance, ideally on a team that likes new tools.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band tinted">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why finance + tech</span>
+      <h2>What I bring to a finance team</h2>
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <span class="k">Analysis</span>
+        <h3>I read the statements properly</h3>
+        <p>Ratio analysis, forecasting and valuation, written up as a clear recommendation.</p>
+        <ul><li>Financial models for budgeting</li><li>Sector and company research</li><li>Management-ready decks</li></ul>
+      </article>
+      <article class="pillar">
+        <span class="k">Delivery</span>
+        <h3>I keep work moving</h3>
+        <p>High-volume aviation operations and end-to-end project coordination taught me deadlines and ownership.</p>
+        <ul><li>Single point of contact for clients</li><li>Vendor and team coordination</li><li>Rehired by Air India</li></ul>
+      </article>
+      <article class="pillar">
+        <span class="k">AI fluency</span>
+        <h3>I make the slow parts fast</h3>
+        <p>I use AI to research, summarise and automate, and I check every number it gives me.</p>
+        <ul><li>Faster company research</li><li>Automated reporting checks</li><li>A shipped web product</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="ai">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">AI work</span>
+      <h2>Making finance work easier with AI</h2>
+      <p>A product I built and the everyday workflows where AI saves me time. I check every number it gives me.</p>
+    </div>
+
+    <div class="projects">
+      <article class="proj">
+        <span class="tag">Live · Web product</span>
+        <h3>Rhythm Singers booking platform</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>A Pune singing business needed online bookings and payments.</dd></div>
+          <div><dt>What I did</dt><dd>Built it with AI-assisted development: event bookings, UPI payments, an admin area, automatic deploys.</dd></div>
+          <div><dt>Stack</dt><dd>React, Cloudflare Workers, D1 database, GitHub Actions</dd></div>
+        </dl>
+        <a class="more" href="https://www.rhythmsingers.workers.dev" target="_blank" rel="noopener">Visit the live site ↗</a>
+      </article>
+      <article class="proj">
+        <span class="tag">Workflow · Reporting</span>
+        <h3>Faster, checked reporting</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Recurring reports were slow to build and easy to get wrong.</dd></div>
+          <div><dt>What I did</dt><dd>Standardised Excel templates, pivot tables and data checks. I now add AI for first-draft commentary.</dd></div>
+          <div><dt>Tools</dt><dd>Excel, pivot tables, AI summarisation</dd></div>
+        </dl>
+      </article>
+      <article class="proj">
+        <span class="tag">Workflow · Research</span>
+        <h3>AI-assisted company research</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Sector research means reading a lot before you can judge anything.</dd></div>
+          <div><dt>What I did</dt><dd>I use AI to gather and summarise, then do the risk and return judgement myself in a short deck.</dd></div>
+          <div><dt>Tools</dt><dd>AI research tools, Excel, PowerPoint</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band tinted" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <article class="role">
+        <div class="when">06/2024 – 02/2025</div>
+        <div>
+          <h3>Financial Analyst</h3>
+          <p class="org">Wegsoft Technologies Pvt Ltd · India</p>
+          <ul>
+            <li>Analysed income statements, balance sheets and cash flows, and turned ratio analysis into written recommendations for management.</li>
+            <li>Built Excel financial models and revenue forecasts used in budgeting and investment decisions.</li>
+            <li>Researched sectors and companies and summarised risk and return in management-ready decks.</li>
+            <li>Standardised Excel templates, pivot tables and data checks for recurring reporting.</li>
+          </ul>
+          <div class="chips"><span class="chip">Financial modelling</span><span class="chip">Forecasting</span><span class="chip">Ratio analysis</span><span class="chip">Excel</span><span class="chip">PowerPoint</span></div>
+        </div>
+      </article>
+      <article class="role">
+        <div class="when">09/2022 – 01/2023</div>
+        <div>
+          <h3>Project Coordinator</h3>
+          <p class="org">Silverstone Pvt. Ltd. · India</p>
+          <ul>
+            <li>Planned and delivered projects end to end: schedules, vendors and on-site execution.</li>
+            <li>Single point of contact for clients, vendors and internal teams.</li>
+          </ul>
+          <div class="chips"><span class="chip">Project delivery</span><span class="chip">Vendor coordination</span><span class="chip">Stakeholder management</span></div>
+        </div>
+      </article>
+      <article class="role">
+        <div class="when">11/2021 – 10/2022</div>
+        <div>
+          <h3>Process Executive / Project Associate</h3>
+          <p class="org">Air India (IGT Solutions) · India</p>
+          <ul>
+            <li>Handled customer and operational cases in a high-volume aviation support environment.</li>
+            <li>Resolved booking, scheduling and service issues with cross-functional teams.</li>
+            <li>Project Associate 11/2021 – 04/2022, then rehired as Process Executive 08/2022 – 10/2022.</li>
+          </ul>
+          <div class="chips"><span class="chip">Operations</span><span class="chip">Problem solving</span><span class="chip">Cross-functional work</span></div>
+        </div>
+      </article>
+      <article class="role">
+        <div class="when">03/2022 – 05/2022</div>
+        <div>
+          <h3>HR Recruiter Intern</h3>
+          <p class="org">Coral Bling (Infosys &amp; ECCLREX projects) · India</p>
+          <ul>
+            <li>Sourced and screened candidates, coordinated interviews and supported onboarding.</li>
+          </ul>
+          <div class="chips"><span class="chip">Recruitment</span><span class="chip">Communication</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Skills</span>
+      <h2>Toolkit</h2>
+    </div>
+    <div class="skills">
+      <div>
+        <h3>Finance &amp; analysis</h3>
+        <div class="chips">
+          <span class="chip">Financial statement analysis</span><span class="chip">Financial modelling</span><span class="chip">Forecasting</span><span class="chip">Valuation</span><span class="chip">Investment research</span><span class="chip">Market analysis</span><span class="chip">Risk assessment</span><span class="chip">Portfolio management</span><span class="chip">Corporate finance</span><span class="chip">M&amp;A</span><span class="chip">Derivatives</span><span class="chip">Business analytics</span>
+        </div>
+      </div>
+      <div>
+        <h3>Tools &amp; AI</h3>
+        <div class="chips">
+          <span class="chip">Excel (advanced)</span><span class="chip">Pivot tables</span><span class="chip">PowerPoint</span><span class="chip">Canva</span><span class="chip">Claude &amp; LLM tools</span><span class="chip">Prompt design</span><span class="chip">AI-assisted coding</span>
+        </div>
+      </div>
+      <div>
+        <h3>Business</h3>
+        <div class="chips">
+          <span class="chip">Stakeholder management</span><span class="chip">Client relationships</span><span class="chip">Vendor coordination</span><span class="chip">Process operations</span><span class="chip">Recruitment</span><span class="chip">Business development</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band tinted">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Education</span>
+      <h2>Education, certifications, languages</h2>
+    </div>
+    <div class="edu">
+      <div>
+        <h3>Education</h3>
+        <div class="row"><b>M.Sc. Finance &amp; Investment</b><span>Berlin School of Business and Innovation · 2026 – 2027 (exp.)</span><span>Derivatives, Corporate Finance, Investment Strategy, M&amp;A, Business Analytics</span></div>
+        <div class="row"><b>Bachelor's in Finance &amp; Markets</b><span>Savitribai Phule Pune University · 2021 – 2024</span><span>Financial Accounting, Economics, Banking, Financial Markets</span></div>
+      </div>
+      <div>
+        <h3>Certifications &amp; activities</h3>
+        <div class="row"><b>NSE Certification</b><span>National Stock Exchange of India</span></div>
+        <div class="row"><b>Behavioural Economics</b></div>
+        <div class="row"><b>Liquidation Business</b></div>
+        <div class="row"><b>Dalal Street Fest</b><span>Participant</span></div>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <div class="lang"><b>English</b><span>Fluent</span></div>
+        <div class="lang"><b>Hindi</b><span>Native</span></div>
+        <div class="lang"><b>German</b><span>Conversational, improving</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2>Let's talk about your finance team.</h2>
+        <p>I'm available for Werkstudent, internship and junior roles in Berlin. Happy to share my CV or a sample model.</p>
+      </div>
+      <div class="mailbox">
+        <small>Email</small>
+        <span class="addr" id="addr">pjeurker@gmail.com</span>
+        <div class="row">
+          <button type="button" id="copyBtn">Copy email</button>
+          <a href="mailto:pjeurker@gmail.com">Open mail app</a>
+        </div>
+        <small id="copyMsg" aria-live="polite">Based in Berlin · Student residence permit</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Prajakta Jeurker · Berlin</span>
+    <span>Designed and built with AI-assisted tools</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var copyBtn=document.getElementById('copyBtn'),msg=document.getElementById('copyMsg'),addr=document.getElementById('addr');
+  copyBtn.addEventListener('click',function(){
+    var done=function(){msg.textContent='Email copied.'};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(addr);var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='Selected. Press Ctrl/Cmd + C to copy.'};
+    try{navigator.clipboard.writeText('pjeurker@gmail.com').then(done,fallback)}catch(e){fallback()}
+  });
+})();
+</script>
+</body>
+</html>
